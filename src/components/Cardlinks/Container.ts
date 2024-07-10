@@ -148,6 +148,20 @@ animation: pulseAnimation 1.1s infinite;
 
 `;
 
+export const CtaText2 = styled.h2`
+color: white;
+
+font-family: Inter;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 27px */
+filter: drop-shadow(-4px 6px 43px #000000);
+
+
+`;
+
+
 export const Button = styled.a`
 color: white;
 display: inline-block;
@@ -175,6 +189,7 @@ display: inline-block;
 
 
 `;
+
 
 
 
