@@ -1,16 +1,19 @@
 import styled from 'styled-components';
 
-export const BackgroundContainer = styled.div`
+interface PropsBgContainer {
+  img: string;
+}
+
+export const BackgroundContainer = styled.div<PropsBgContainer>`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   background-position: center;
   background-repeat: no-repeat;
-
+  position: relative;
   opacity: 0.89;
-      
-  background-image: url('/src/assets/bg.svg');
+  background-image: url(${({ img }) => img});
 
   @media (max-width: 768px) {
   // background-image: url('/src/assets/bg mobile.svg');
@@ -19,13 +22,22 @@ export const BackgroundContainer = styled.div`
   @media (orientation: portrait) {
     background-size: auto 100%;
     background-size: cover;
-    background-position: 80% 50%;
+    background-position: 55% 50%;
   }
 
   @media (orientation: landscape) {
     background-size: 100% auto;
   }
 
+
+`;
+
+export const BackgroundContainerOpacity = styled.div`
+position: absolute;
+width: 100%;
+height: 100%;
+background-color: black;
+opacity: 0.27;
 
 `;
 
@@ -46,11 +58,30 @@ padding-right: 60px;
 export const Title = styled.h1`
 color: #FFF;
 font-family: Inter;
+transform: translateX(-100vw);
 font-size: 56px;
 font-style: normal;
 font-weight: 700;
 line-height: 120%;
 filter: drop-shadow(-4px 6px 43px #000000);
+animation-name: leftAnimation;
+animation-duration: 1s;
+animation-delay: 0.5s;
+animation-timing-function: ease-in;
+animation-fill-mode: forwards;
+
+
+
+
+@keyframes leftAnimation {
+  0% {
+    transform: translateX(-100vw);
+  } 
+  100% {
+    transform: translateX(0);
+  }
+  
+}
 
 @media (max-width: 768px) {
     font-size: 40px;
@@ -60,13 +91,31 @@ filter: drop-shadow(-4px 6px 43px #000000);
 
 export const SubTitle = styled.h2`
 color: #D9D9D9;
-
+transform: translateX(100vw);
 font-family: Inter;
 font-size: 18px;
 font-style: normal;
 font-weight: 200;
 line-height: 150%; /* 27px */
 filter: drop-shadow(-4px 6px 41px #000000);
+animation-name: rigthAnimation;
+animation-duration: 1s;
+animation-delay: 1.5s;
+animation-timing-function: ease-in;
+animation-fill-mode: forwards;
+
+
+
+
+@keyframes rigthAnimation {
+  0% {
+    transform: translateX(100vw);
+  } 
+  100% {
+    transform: translateX(0);
+  }
+  
+}
 
 `;
 
@@ -79,6 +128,23 @@ font-style: normal;
 font-weight: 600;
 line-height: 150%; /* 27px */
 filter: drop-shadow(-4px 6px 43px #000000);
+
+animation: pulseAnimation 1.1s infinite;
+
+
+
+
+@keyframes pulseAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 `;
 
@@ -105,11 +171,14 @@ display: inline-block;
   transition: 0.2s;
   color: white;
 }
+
+
+
 `;
 
 
 
- 
+
 
 export const SocialContainer = styled.a`
   width: 52px;
@@ -129,4 +198,4 @@ export const SocialContainer = styled.a`
     
 }
 `
-;
+  ;
