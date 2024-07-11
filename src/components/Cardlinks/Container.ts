@@ -22,7 +22,7 @@ export const BackgroundContainer = styled.div<PropsBgContainer>`
   @media (orientation: portrait) {
     background-size: auto 100%;
     background-size: cover;
-    background-position: 55% 50%;
+    background-position: 70% 50%;
   }
 
   @media (orientation: landscape) {
@@ -84,7 +84,7 @@ animation-fill-mode: forwards;
 }
 
 @media (max-width: 768px) {
-    font-size: 40px;
+    font-size: 39px;
     
   }
 `;

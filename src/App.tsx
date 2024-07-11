@@ -8,7 +8,8 @@ import {
   SubTitle,
   Title,
 } from "./components/Cardlinks/Container";
-import bg from "./assets/bg.svg";
+import bg from "./assets/bghomem.jpg";
+import bgcasal from "./assets/bgcasal.jpg"
 
 export default function App() {
   return (
@@ -27,7 +28,7 @@ export default function App() {
         </ContainerText>
       </BackgroundContainer>
 
-      <BackgroundContainer img={bg}>
+      <BackgroundContainer img={bgcasal}>
         <BackgroundContainerOpacity />
         <ContainerText>
           <Title>CHEGOU A HORA DE ASSUMIR O CONTROLE!</Title>
